@@ -1,0 +1,37 @@
+.agents-container {
+    padding: 40px;
+    text-align: center;
+}
+.agent-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+.agent-card {
+    background: #1a1a22;
+    padding: 30px;
+    border-radius: 8px;
+}
+.agent-card {
+    background: #1a1a22;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+.agent-card:hover {
+    transform: translateY(-5px);
+    background: #22222b;
+}
+.agent-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+.agent-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
