@@ -1,21 +1,41 @@
 <!DOCTYPE html>
+<!-- 
+    ===========================================
+    NOVARIFT - ABOUT PAGE (about.html)
+    ===========================================
+    
+    This page provides information about NovaRift.
+    
+    SECTIONS:
+    1. About Hero: Introduction text
+    2. Game Trailer: Embedded video that autoplays
+    
+    NOTE: "Meet the Team" and "Our Mission" sections have been removed
+    as per user request.
+    ===========================================
+-->
 <html lang="en">
 <head>
+    <!-- Meta Tags: SEO and social sharing -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn about NovaRift - our mission, team, and the tactical universe we're building.">
+    <meta name="description" content="Learn about NovaRift - the tactical universe we're building.">
     <title>About - NovaRift</title>
     <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/about.css">
-    <link rel="stylesheet" href="css/footer.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">      <!-- Global styles -->
+    <link rel="stylesheet" href="css/navbar.css">     <!-- Navigation -->
+    <link rel="stylesheet" href="css/about.css">       <!-- About page specific styles -->
+    <link rel="stylesheet" href="css/footer.css">      <!-- Footer -->
 </head>
 <body>
+    <!-- Page Loader -->
     <div id="loader">
         <div class="spinner"></div>
     </div>
 
+    <!-- Header: Same navigation as all pages -->
     <header>
         <nav>
             <a href="index.html" class="logo">NovaRift</a>
@@ -26,7 +46,7 @@
                     <li><a href="maps.html">Maps</a></li>
                     <li><a href="weapons.html">Weapons</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="about.html" class="active">About</a></li>  <!-- Active page highlighted -->
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="faq.html">FAQ</a></li>
                 </ul>
@@ -40,60 +60,36 @@
         </nav>
     </header>
 
+    <!-- Main Content -->
     <main>
         <div class="about-container">
+            <!-- About Hero Section: Introduction text -->
             <section class="about-hero">
                 <h1>About NovaRift</h1>
                 <p>NovaRift is a tactical arena shooter that combines strategic gameplay with dynamic abilities. Built for players who value precision, teamwork, and clutch moments.</p>
             </section>
 
+            <!-- Game Trailer Section: Embedded video that autoplays, loops, and is muted -->
+            <!-- The video element uses autoplay, muted, and loop attributes -->
+            <!-- poster attribute provides a fallback image if video fails to load -->
             <section class="trailer-section">
                 <h2>Game Trailer</h2>
                 <figure class="trailer-wrapper">
+                    <!-- Video element with fallback poster image if video fails to load -->
                     <video 
-                        autoplay 
-                        muted 
-                        loop 
-                        playsinline
+                        autoplay      <!-- Starts playing automatically -->
+                        muted         <!-- Required for autoplay in most browsers -->
+                        loop          <!-- Repeats video continuously -->
+                        playsinline   <!-- Prevents fullscreen on mobile -->
                         poster="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1600&q=80"
                         aria-label="NovaRift game trailer">
                         <source src="https://videos.pexels.com/video-files/3045163/3045163-hd_1920_1080_30fps.mp4" type="video/mp4">
+                        <!-- Fallback text if browser doesn't support video -->
                         Your browser does not support the video tag.
                     </video>
+                    <!-- Figcaption for accessibility (hidden visually) -->
                     <figcaption style="display: none;">NovaRift Game Trailer</figcaption>
                 </figure>
-            </section>
-
-            <section class="mission-section">
-                <h2>Our Mission</h2>
-                <p>At NovaRift, we're dedicated to creating an immersive tactical gaming experience that rewards skill, strategy, and teamwork. Our mission is to build a competitive ecosystem where every match matters and every play can turn the tide.</p>
-                <p>We believe in fair play, continuous improvement, and a community-driven approach to game development. Every update, every agent, and every map is crafted with the player experience at its core.</p>
-            </section>
-
-            <section class="team-section">
-                <h2>Meet the Team</h2>
-                <div class="team-grid">
-                    <article class="team-member">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop" alt="Alex Chen - Game Director" loading="lazy">
-                        <h3>Alex Chen</h3>
-                        <p>Game Director</p>
-                    </article>
-                    <article class="team-member">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop" alt="Sarah Martinez - Lead Designer" loading="lazy">
-                        <h3>Sarah Martinez</h3>
-                        <p>Lead Designer</p>
-                    </article>
-                    <article class="team-member">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop" alt="James Wilson - Tech Lead" loading="lazy">
-                        <h3>James Wilson</h3>
-                        <p>Tech Lead</p>
-                    </article>
-                    <article class="team-member">
-                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop" alt="Emma Thompson - Art Director" loading="lazy">
-                        <h3>Emma Thompson</h3>
-                        <p>Art Director</p>
-                    </article>
-                </div>
             </section>
         </div>
     </main>

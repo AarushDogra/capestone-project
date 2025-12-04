@@ -1,63 +1,97 @@
-/* ---------- CSS VARIABLES ---------- */
+/* ============================================
+   NOVARIFT - GLOBAL STYLES & CSS VARIABLES
+   ============================================
+   
+   This file contains:
+   1. CSS Custom Properties (Variables) for theming
+   2. Global body and typography styles
+   3. Button component styles
+   4. Theme toggle button styles
+   5. Page loader animation
+   
+   WHY CSS VARIABLES?
+   - Easy theme switching (dark/light mode)
+   - Consistent spacing and colors across the site
+   - Easy to maintain and update
+   ============================================ */
+
+/* ---------- CSS VARIABLES (Custom Properties) ---------- */
+/* 
+   These variables can be used anywhere in the CSS using var(--variable-name)
+   They make it easy to change colors/spacing site-wide
+*/
 :root {
-    /* Colors - Dark Theme (Default) */
-    --color-bg-primary: #05060a;
-    --color-bg-secondary: #101019;
-    --color-bg-card: #151520;
-    --color-bg-overlay: rgba(5, 6, 10, 0.93);
-    --color-text-primary: #f5f5f7;
-    --color-text-secondary: #c3c6d1;
-    --color-text-muted: #aeb3c6;
-    --color-accent: #ff4655;
-    --color-accent-light: #ff7b5a;
-    --color-accent-glow: rgba(255, 70, 85, 0.35);
-    --color-border: rgba(255, 255, 255, 0.06);
-    --color-border-light: rgba(255, 255, 255, 0.12);
+    /* Colors - Dark Theme (Default)
+       These are the default dark theme colors used throughout the site */
+    --color-bg-primary: #05060a;        /* Main background color */
+    --color-bg-secondary: #101019;       /* Secondary background (cards, etc.) */
+    --color-bg-card: #151520;           /* Card background color */
+    --color-bg-overlay: rgba(5, 6, 10, 0.93);  /* Navbar overlay background */
+    --color-text-primary: #f5f5f7;      /* Main text color */
+    --color-text-secondary: #c3c6d1;     /* Secondary text (descriptions) */
+    --color-text-muted: #aeb3c6;         /* Muted text (labels, tags) */
+    --color-accent: #ff4655;             /* Primary accent color (Valorant red) */
+    --color-accent-light: #ff7b5a;       /* Lighter variant of accent */
+    --color-accent-glow: rgba(255, 70, 85, 0.35);  /* Glow effect for buttons */
+    --color-border: rgba(255, 255, 255, 0.06);     /* Subtle borders */
+    --color-border-light: rgba(255, 255, 255, 0.12);  /* More visible borders */
     
-    /* Spacing */
-    --spacing-xs: 8px;
-    --spacing-sm: 16px;
-    --spacing-md: 24px;
-    --spacing-lg: 40px;
-    --spacing-xl: 64px;
+    /* Spacing System
+       Consistent spacing values used throughout the site */
+    --spacing-xs: 8px;    /* Extra small spacing */
+    --spacing-sm: 16px;   /* Small spacing */
+    --spacing-md: 24px;   /* Medium spacing */
+    --spacing-lg: 40px;   /* Large spacing */
+    --spacing-xl: 64px;   /* Extra large spacing */
     
-    /* Breakpoints */
-    --bp-sm: 480px;
-    --bp-md: 768px;
-    --bp-lg: 1024px;
+    /* Responsive Breakpoints
+       Used in media queries for responsive design */
+    --bp-sm: 480px;   /* Small devices (phones) */
+    --bp-md: 768px;   /* Medium devices (tablets) */
+    --bp-lg: 1024px;  /* Large devices (desktops) */
     
-    /* Transitions */
-    --transition-fast: 0.18s ease;
-    --transition-normal: 0.22s ease;
-    --transition-slow: 0.3s ease;
+    /* Transition Timing
+       Consistent animation speeds across the site */
+    --transition-fast: 0.18s ease;    /* Quick animations (hover effects) */
+    --transition-normal: 0.22s ease;   /* Standard animations */
+    --transition-slow: 0.3s ease;      /* Slower animations (transforms) */
 }
 
-/* Light Theme */
+/* Light Theme Override
+   When the HTML element has data-theme="light", these colors override the dark theme
+   The JavaScript in main.js toggles this attribute when the theme button is clicked */
 [data-theme="light"] {
-    --color-bg-primary: #f5f5f7;
-    --color-bg-secondary: #ffffff;
-    --color-bg-card: #fafafa;
-    --color-bg-overlay: rgba(245, 245, 247, 0.93);
-    --color-text-primary: #05060a;
-    --color-text-secondary: #1a1a22;
-    --color-text-muted: #4a4a5a;
-    --color-border: rgba(5, 6, 10, 0.12);
-    --color-border-light: rgba(5, 6, 10, 0.2);
+    --color-bg-primary: #f5f5f7;       /* Light background */
+    --color-bg-secondary: #ffffff;      /* White cards */
+    --color-bg-card: #fafafa;          /* Slightly off-white */
+    --color-bg-overlay: rgba(245, 245, 247, 0.93);  /* Light navbar overlay */
+    --color-text-primary: #05060a;      /* Dark text on light background */
+    --color-text-secondary: #1a1a22;    /* Darker secondary text */
+    --color-text-muted: #4a4a5a;        /* Muted dark text */
+    --color-border: rgba(5, 6, 10, 0.12);      /* Dark borders on light bg */
+    --color-border-light: rgba(5, 6, 10, 0.2);  /* More visible dark borders */
 }
 
-/* ---------- GLOBAL LAYOUT & THEME ---------- */
+/* ---------- GLOBAL BODY STYLES ---------- */
+/* 
+   Base styles applied to the entire page
+   - Uses CSS variables so colors change with theme
+   - Radial gradients create a subtle background effect
+   - Smooth transitions when theme changes
+*/
 body {
-    margin: 0;
-    min-height: 100vh;
+    margin: 0;                          /* Remove default browser margin */
+    min-height: 100vh;                  /* Full viewport height minimum */
+    /* Multiple radial gradients create a layered background effect */
     background:
         radial-gradient(circle at top left, #1b2430 0, transparent 50%),
         radial-gradient(circle at bottom right, #1a0b10 0, transparent 55%),
-        var(--color-bg-primary);
-    color: var(--color-text-primary);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
-    transition: background 0.3s ease, color 0.3s ease;
+        var(--color-bg-primary);        /* Base color from CSS variable */
+    color: var(--color-text-primary);   /* Text color from CSS variable */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;  /* Modern system fonts */
+    -webkit-font-smoothing: antialiased; /* Smooth text rendering on Mac */
+    overflow-x: hidden;                 /* Prevent horizontal scrolling */
+    transition: background 0.3s ease, color 0.3s ease;  /* Smooth theme transitions */
 }
 
 [data-theme="light"] body {
@@ -88,23 +122,32 @@ a {
     border-radius: 2px;
 }
 
-/* ---------- CTA BUTTONS ---------- */
+/* ---------- CTA BUTTONS (Call-to-Action) ---------- */
+/* 
+   Primary button style used throughout the site
+   - Gradient background for visual appeal
+   - Pill shape (border-radius: 999px)
+   - Glow effect for emphasis
+   - Hover effect lifts button up
+*/
 .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 14px 34px;
+    display: inline-flex;               /* Flexbox for centering content */
+    align-items: center;                 /* Vertical centering */
+    justify-content: center;             /* Horizontal centering */
+    padding: 14px 34px;                  /* Comfortable clickable area */
+    /* Gradient from accent color to lighter variant */
     background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 999px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    border: 1px solid rgba(255, 255, 255, 0.16);
-    box-shadow: 0 0 18px var(--color-accent-glow);
+    color: #ffffff;                      /* White text for contrast */
+    text-decoration: none;               /* Remove underline from links */
+    border-radius: 999px;                /* Pill shape (fully rounded) */
+    font-weight: 600;                    /* Bold text */
+    letter-spacing: 0.08em;              /* Spaced out letters (Valorant style) */
+    text-transform: uppercase;           /* All caps text */
+    border: 1px solid rgba(255, 255, 255, 0.16);  /* Subtle border */
+    box-shadow: 0 0 18px var(--color-accent-glow);  /* Glow effect */
+    /* Smooth transitions for hover effects */
     transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
-    cursor: pointer;
+    cursor: pointer;                     /* Pointer cursor on hover */
 }
 
 .btn:hover,
@@ -127,20 +170,25 @@ a {
 }
 
 /* ---------- THEME TOGGLE BUTTON ---------- */
+/* 
+   Button in navbar that switches between dark/light themes
+   - Icon changes based on current theme (☀️ for dark mode, 🌙 for light mode)
+   - JavaScript in main.js handles the toggle functionality
+*/
 .theme-toggle {
-    background: transparent;
-    border: 1px solid var(--color-border);
-    color: var(--color-text-primary);
-    padding: 8px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 18px;
-    transition: all var(--transition-fast);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
+    background: transparent;             /* No background */
+    border: 1px solid var(--color-border);  /* Subtle border */
+    color: var(--color-text-primary);    /* Text color matches theme */
+    padding: 8px 12px;                  /* Padding for clickable area */
+    border-radius: 6px;                 /* Rounded corners */
+    cursor: pointer;                     /* Pointer cursor */
+    font-size: 18px;                     /* Icon size */
+    transition: all var(--transition-fast);  /* Smooth hover transitions */
+    display: flex;                        /* Flexbox for centering */
+    align-items: center;                  /* Vertical center */
+    justify-content: center;              /* Horizontal center */
+    width: 40px;                          /* Fixed width */
+    height: 40px;                         /* Fixed height (square) */
 }
 
 .theme-toggle:hover,
@@ -150,27 +198,35 @@ a {
     transform: scale(1.05);
 }
 
-/* ---------- LOADER (CSS-ONLY, NO JS NEEDED) ---------- */
+/* ---------- PAGE LOADER (CSS-ONLY ANIMATION) ---------- */
+/* 
+   Loading spinner that appears when page first loads
+   - Pure CSS animation (no JavaScript needed)
+   - Automatically fades out after animation completes
+   - Spinner rotates continuously
+*/
 #loader {
-    position: fixed;
-    inset: 0;
-    background: var(--color-bg-primary);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
+    position: fixed;                     /* Fixed position covers entire screen */
+    inset: 0;                            /* Shorthand for top:0, right:0, bottom:0, left:0 */
+    background: var(--color-bg-primary);  /* Background matches theme */
+    display: flex;                        /* Flexbox for centering */
+    justify-content: center;             /* Horizontal center */
+    align-items: center;                  /* Vertical center */
+    z-index: 9999;                       /* Above all other content */
+    /* Fades out after 1.1s delay, animation takes 0.8s */
     animation: loaderFade 0.8s 1.1s forwards;
 }
 
+/* Spinning circle loader */
 .spinner {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    border: 3px solid #15151c;
-    border-top-color: var(--color-accent);
-    border-right-color: var(--color-accent);
-    box-shadow: 0 0 20px rgba(255, 70, 85, 0.8);
-    animation: spin 0.9s linear infinite;
+    width: 64px;                         /* Size of spinner */
+    height: 64px;                        /* Square (becomes circle) */
+    border-radius: 50%;                 /* Makes it circular */
+    border: 3px solid #15151c;            /* Base border color */
+    border-top-color: var(--color-accent);     /* Top border is accent color */
+    border-right-color: var(--color-accent);   /* Right border is accent color */
+    box-shadow: 0 0 20px rgba(255, 70, 85, 0.8);  /* Glow effect */
+    animation: spin 0.9s linear infinite;  /* Continuous rotation */
 }
 
 @keyframes spin {

@@ -1,4 +1,24 @@
-// ========== LIGHTBOX MODAL FOR GALLERY ==========
+// ============================================
+// LIGHTBOX MODAL FOR GALLERY
+// ============================================
+//
+// WHAT IT DOES:
+// - Opens images in a full-screen modal when clicked
+// - Allows navigation between images with arrow buttons
+// - Supports keyboard navigation (Arrow keys, ESC)
+// - Prevents body scrolling when lightbox is open
+//
+// HOW IT WORKS:
+// 1. Finds all gallery items with [data-lightbox] attribute
+// 2. Creates lightbox HTML structure dynamically
+// 3. On click, opens image in modal overlay
+// 4. Arrow buttons navigate between images
+// 5. ESC key or clicking outside closes the modal
+//
+// USAGE:
+// Add data-lightbox attribute to gallery links:
+// <a href="image.jpg" data-lightbox data-caption="Image description">
+// ============================================
 (function() {
     let currentIndex = 0;
     let items = [];

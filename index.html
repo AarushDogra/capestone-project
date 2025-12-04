@@ -1,19 +1,41 @@
 <!DOCTYPE html>
+<!-- 
+    ===========================================
+    NOVARIFT - HOMEPAGE (index.html)
+    ===========================================
+    
+    This is the main landing page of the NovaRift website.
+    
+    KEY FEATURES:
+    1. Hero section with autoplaying video background
+    2. Navigation bar with theme toggle and mobile menu
+    3. Call-to-action buttons with prefetching
+    4. Statistics display
+    5. Footer with links and social media
+    
+    STRUCTURE:
+    - <head>: Meta tags, stylesheets, and page metadata
+    - <body>: Page loader, header, main content, footer
+    - <main>: Hero section with video and CTAs
+    ===========================================
+-->
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8">  <!-- Character encoding (UTF-8 supports all languages) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Responsive design -->
     <meta name="description" content="NovaRift - A tactical universe of heroes, tech, and chaos. Assemble your squad and master the battlefield.">
     <meta name="keywords" content="NovaRift, tactical game, agents, weapons, maps, gaming">
     
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph Meta Tags (for Facebook/LinkedIn sharing) -->
+    <!-- These tags control how the page appears when shared on social media -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://novarift.com/">
     <meta property="og:title" content="NovaRift - Enter The Rift">
     <meta property="og:description" content="A tactical universe of heroes, tech, and chaos. Assemble your squad and master the battlefield.">
     <meta property="og:image" content="https://novarift.com/assets/images/og-image.jpg">
     
-    <!-- Twitter -->
+    <!-- Twitter Card Meta Tags (for Twitter sharing) -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://novarift.com/">
     <meta property="twitter:title" content="NovaRift - Enter The Rift">
@@ -21,24 +43,33 @@
     <meta property="twitter:image" content="https://novarift.com/assets/images/og-image.jpg">
     
     <title>NovaRift - Enter The Rift</title>
-    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
-    <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">  <!-- Browser tab icon -->
+    <link rel="manifest" href="manifest.json">  <!-- PWA manifest for mobile app-like experience -->
+    
+    <!-- Stylesheets - Loaded in order -->
+    <link rel="stylesheet" href="css/style.css">      <!-- Global styles and CSS variables -->
+    <link rel="stylesheet" href="css/navbar.css">     <!-- Navigation bar styles -->
+    <link rel="stylesheet" href="css/home.css">       <!-- Homepage hero section styles -->
+    <link rel="stylesheet" href="css/footer.css">     <!-- Footer component styles -->
 </head>
 <body>
+    <!-- Page Loader: Shows spinner while page loads, fades out automatically -->
+    <!-- CSS animation handles the fade-out, no JavaScript needed -->
     <div id="loader">
         <div class="spinner"></div>
     </div>
 
+    <!-- Header: Contains navigation bar -->
     <header>
         <nav>
+            <!-- Logo: Links back to homepage -->
             <a href="index.html" class="logo">NovaRift</a>
+            
+            <!-- Navigation Wrapper: Contains menu and controls -->
             <div class="nav-wrapper">
+                <!-- Main Navigation Menu -->
                 <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="index.html" class="active">Home</a></li>  <!-- active class highlights current page -->
                     <li><a href="agents.html">Agents</a></li>
                     <li><a href="maps.html">Maps</a></li>
                     <li><a href="weapons.html">Weapons</a></li>
@@ -47,7 +78,13 @@
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="faq.html">FAQ</a></li>
                 </ul>
+                
+                <!-- Theme Toggle Button: Switches between dark/light mode -->
+                <!-- JavaScript in main.js handles the toggle functionality -->
                 <button class="theme-toggle" aria-label="Toggle theme">☀️</button>
+                
+                <!-- Hamburger Menu Button: Only visible on mobile devices -->
+                <!-- Three spans create the hamburger icon, CSS animates to X when active -->
                 <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
                     <span></span>
                     <span></span>
@@ -57,19 +94,36 @@
         </nav>
     </header>
 
+    <!-- Main Content Area -->
     <main>
+        <!-- Hero Section: Full-screen landing area with video background -->
         <section class="hero">
+            <!-- Background Video: Autoplays, loops, muted (required for autoplay) -->
+            <!-- poster attribute shows image if video fails to load -->
             <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1600&q=80">
                 <source src="https://videos.pexels.com/video-files/3045163/3045163-hd_1920_1080_30fps.mp4" type="video/mp4">
             </video>
+            
+            <!-- Overlay: Dark gradient overlay on top of video for text readability -->
             <div class="overlay"></div>
+            
+            <!-- Hero Content: Text and buttons overlaid on video -->
             <div class="hero-content">
+                <!-- Main Heading: Fade-in animation on page load -->
                 <h1 class="fade"><span class="hero-title-accent">Enter The Rift</span></h1>
+                
+                <!-- Subtitle: Description text with fade-in animation -->
                 <p class="fade2">Assemble your squad, master your abilities, and control the battlefield in a tactical arena built for clutch plays.</p>
+                
+                <!-- Call-to-Action Buttons -->
                 <div class="hero-actions fade3">
+                    <!-- Primary CTA: Prefetches page on hover for faster loading -->
                     <a href="agents.html" class="btn" data-prefetch>Explore Agents</a>
+                    <!-- Secondary CTA: Outline style button -->
                     <a href="weapons.html" class="btn btn--outline">View Arsenal</a>
                 </div>
+                
+                <!-- Statistics Display: Shows key numbers about the game -->
                 <div class="hero-stats fade3">
                     <span><strong>4</strong>Core Roles</span>
                     <span><strong>3</strong>Signature Maps</span>

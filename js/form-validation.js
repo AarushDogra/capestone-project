@@ -1,4 +1,30 @@
-// ========== CONTACT FORM VALIDATION ==========
+// ============================================
+// CONTACT FORM VALIDATION
+// ============================================
+//
+// WHAT IT DOES:
+// - Validates form fields in real-time (on blur)
+// - Shows error messages for invalid fields
+// - Prevents form submission if validation fails
+// - Includes honeypot field to catch spam bots
+// - Shows success message when form is valid
+//
+// VALIDATION RULES:
+// - Name: At least 2 characters
+// - Email: Valid email format (contains @ and .)
+// - Message: At least 10 characters
+// - Honeypot: Must be empty (bots often fill hidden fields)
+//
+// HOW IT WORKS:
+// 1. Validates each field when user leaves it (blur event)
+// 2. Shows/hides error messages dynamically
+// 3. On submit, validates all fields again
+// 4. If valid, shows success message (no backend, so no actual sending)
+//
+// ACCESSIBILITY:
+// - Uses aria-invalid for screen readers
+// - Focuses first error field if validation fails
+// ============================================
 (function() {
     const contactForm = document.querySelector('#contact-form');
     if (!contactForm) return;

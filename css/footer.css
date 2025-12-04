@@ -1,4 +1,21 @@
-/* ---------- FOOTER ---------- */
+/* ============================================
+   FOOTER COMPONENT STYLES (footer.css)
+   ============================================
+   
+   This file styles the footer that appears at the
+   bottom of every page.
+   
+   SECTIONS:
+   - Footer Content: Grid layout with multiple columns
+   - Footer Links: Navigation links
+   - Footer Social: Social media icons
+   - Footer Bottom: Copyright text
+   
+   RESPONSIVE:
+   - Stacks vertically on mobile devices
+   ============================================ */
+
+/* Main Footer Container */
 footer {
     background: var(--color-bg-secondary);
     border-top: 1px solid var(--color-border);

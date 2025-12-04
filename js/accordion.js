@@ -1,4 +1,32 @@
-// ========== FAQ ACCORDION ==========
+// ============================================
+// FAQ ACCORDION COMPONENT
+// ============================================
+//
+// WHAT IT DOES:
+// - Creates expandable/collapsible FAQ sections
+// - Only one item open at a time (closes others)
+// - Smooth height animation when expanding
+// - Keyboard accessible (Enter/Space to toggle)
+//
+// HOW IT WORKS:
+// 1. Finds all .accordion-item elements
+// 2. Toggles max-height CSS property to show/hide content
+// 3. Updates ARIA attributes for screen readers
+// 4. Closes other items when one opens
+//
+// HTML STRUCTURE REQUIRED:
+// <div class="accordion-item">
+//   <button class="accordion-button">Question</button>
+//   <div class="accordion-content">
+//     <div class="accordion-content-inner">Answer</div>
+//   </div>
+// </div>
+//
+// ACCESSIBILITY:
+// - aria-expanded attribute for screen readers
+// - aria-controls links button to content
+// - Keyboard support (Enter and Space keys)
+// ============================================
 (function() {
     function initAccordion() {
         const accordionItems = document.querySelectorAll('.accordion-item');
