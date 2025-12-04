@@ -1,37 +1,138 @@
 .hero {
-    height: 100vh;
-    /* External sci-fi style background image; replace with your own if you want */
-    background: url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1400&q=80") center/cover no-repeat;
+    height: calc(100vh - 90px);
+    background:
+        linear-gradient(130deg, rgba(5, 6, 10, 0.7), rgba(5, 6, 10, 0.2)),
+        url("https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1600&q=80")
+        center/cover no-repeat;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-.overlay {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.55);
-}
-.hero h1, .hero p, .hero .btn {
-    position: relative;
-}
-.fade {
-    opacity: 0;
-    animation: fadeIn 1s forwards;
-}
-.fade2 {
-    opacity: 0;
-    animation: fadeIn 1.4s forwards;
-}
-.fade3 {
-    opacity: 0;
-    animation: fadeIn 1.8s forwards;
-}
-@keyframes fadeIn {
-    to { opacity: 1; transform: translateY(-5px); }
+    align-items: flex-start;
+    padding: 0 10vw;
+    color: #ffffff;
+    overflow: hidden;
 }
 
+.overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(120deg, rgba(5, 6, 10, 0.9) 0%, rgba(5, 6, 10, 0.4) 55%, rgba(255, 70, 85, 0.08) 100%);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    max-width: 520px;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 5vw, 56px);
+    margin: 0 0 16px;
+}
+
+.hero-title-accent {
+    display: inline-block;
+    position: relative;
+    padding-left: 18px;
+}
+
+.hero-title-accent::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%) skewX(-16deg);
+    width: 10px;
+    height: 80%;
+    background: linear-gradient(180deg, #ff4655, #ff9c5a);
+    box-shadow: 0 0 18px rgba(255, 70, 85, 0.8);
+}
+
+.hero p {
+    margin: 0 0 26px;
+    max-width: 440px;
+    color: #c3c6d1;
+    font-size: 15px;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 26px;
+    margin-top: 32px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #aeb3c6;
+}
+
+.hero-stats span strong {
+    display: block;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    right: -120px;
+    bottom: -140px;
+    width: 360px;
+    height: 360px;
+    background:
+        linear-gradient(135deg, rgba(255, 70, 85, 0.15), transparent 55%),
+        radial-gradient(circle at 10% 0, rgba(255, 70, 85, 0.45), transparent 60%);
+    transform: skewX(-18deg) rotate(-8deg);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow:
+        0 0 32px rgba(255, 70, 85, 0.5),
+        inset 0 0 18px rgba(0, 0, 0, 0.9);
+    opacity: 0.9;
+}
+
+.fade {
+    opacity: 0;
+    animation: fadeIn 0.7s forwards;
+}
+
+.fade2 {
+    opacity: 0;
+    animation: fadeIn 0.7s 0.2s forwards;
+}
+
+.fade3 {
+    opacity: 0;
+    animation: fadeIn 0.7s 0.4s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 0 22px;
+        align-items: flex-start;
+    }
+
+    .hero-stats {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+}
 

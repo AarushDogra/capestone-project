@@ -1,23 +1,31 @@
 .maps-container {
-    padding: 40px;
+    padding: 40px 8vw;
     text-align: center;
 }
 .map-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 25px;
     margin-top: 30px;
 }
 .map-card {
-    background: #1a1a22;
-    padding: 20px;
-    border-radius: 8px;
+    background: radial-gradient(circle at top, rgba(122, 214, 255, 0.12), transparent 55%), #101019;
+    padding: 20px 18px 18px;
+    border-radius: 14px;
     text-align: center;
-    transition: 0.3s;
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    box-shadow:
+        0 14px 38px rgba(0, 0, 0, 0.65),
+        0 0 0 1px rgba(255, 255, 255, 0.02);
 }
 .map-card:hover {
-    transform: translateY(-5px);
-    background: #22222b;
+    transform: translateY(-6px);
+    background: radial-gradient(circle at top, rgba(132, 219, 255, 0.25), transparent 60%), #151520;
+    border-color: rgba(132, 219, 255, 0.65);
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.9),
+        0 0 32px rgba(132, 219, 255, 0.55);
 }
 .map-card img {
     width: 100%;
@@ -28,3 +36,14 @@
     margin-bottom: 12px;
     display: block;
 }
+
+@media (max-width: 768px) {
+    .maps-container {
+        padding-inline: 24px;
+    }
+
+    .map-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+}
+
