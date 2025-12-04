@@ -1,3 +1,50 @@
+/* ---------- CSS VARIABLES ---------- */
+:root {
+    /* Colors - Dark Theme (Default) */
+    --color-bg-primary: #05060a;
+    --color-bg-secondary: #101019;
+    --color-bg-card: #151520;
+    --color-bg-overlay: rgba(5, 6, 10, 0.93);
+    --color-text-primary: #f5f5f7;
+    --color-text-secondary: #c3c6d1;
+    --color-text-muted: #aeb3c6;
+    --color-accent: #ff4655;
+    --color-accent-light: #ff7b5a;
+    --color-accent-glow: rgba(255, 70, 85, 0.35);
+    --color-border: rgba(255, 255, 255, 0.06);
+    --color-border-light: rgba(255, 255, 255, 0.12);
+    
+    /* Spacing */
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 24px;
+    --spacing-lg: 40px;
+    --spacing-xl: 64px;
+    
+    /* Breakpoints */
+    --bp-sm: 480px;
+    --bp-md: 768px;
+    --bp-lg: 1024px;
+    
+    /* Transitions */
+    --transition-fast: 0.18s ease;
+    --transition-normal: 0.22s ease;
+    --transition-slow: 0.3s ease;
+}
+
+/* Light Theme */
+[data-theme="light"] {
+    --color-bg-primary: #f5f5f7;
+    --color-bg-secondary: #ffffff;
+    --color-bg-card: #fafafa;
+    --color-bg-overlay: rgba(245, 245, 247, 0.93);
+    --color-text-primary: #05060a;
+    --color-text-secondary: #1a1a22;
+    --color-text-muted: #4a4a5a;
+    --color-border: rgba(5, 6, 10, 0.12);
+    --color-border-light: rgba(5, 6, 10, 0.2);
+}
+
 /* ---------- GLOBAL LAYOUT & THEME ---------- */
 body {
     margin: 0;
@@ -5,11 +52,19 @@ body {
     background:
         radial-gradient(circle at top left, #1b2430 0, transparent 50%),
         radial-gradient(circle at bottom right, #1a0b10 0, transparent 55%),
-        #05060a;
-    color: #f5f5f7;
+        var(--color-bg-primary);
+    color: var(--color-text-primary);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+[data-theme="light"] body {
+    background:
+        radial-gradient(circle at top left, #e8eaf0 0, transparent 50%),
+        radial-gradient(circle at bottom right, #f0e8ea 0, transparent 55%),
+        var(--color-bg-primary);
 }
 
 h1, h2 {
@@ -22,8 +77,15 @@ a {
 }
 
 ::selection {
-    background: #ff4655;
-    color: #05060a;
+    background: var(--color-accent);
+    color: var(--color-bg-primary);
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 2px;
 }
 
 /* ---------- CTA BUTTONS ---------- */
@@ -32,7 +94,7 @@ a {
     align-items: center;
     justify-content: center;
     padding: 14px 34px;
-    background: linear-gradient(135deg, #ff4655, #ff7b5a);
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light));
     color: #ffffff;
     text-decoration: none;
     border-radius: 999px;
@@ -40,11 +102,13 @@ a {
     letter-spacing: 0.08em;
     text-transform: uppercase;
     border: 1px solid rgba(255, 255, 255, 0.16);
-    box-shadow: 0 0 18px rgba(255, 70, 85, 0.35);
-    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    box-shadow: 0 0 18px var(--color-accent-glow);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+    cursor: pointer;
 }
 
-.btn:hover {
+.btn:hover,
+.btn:focus-visible {
     transform: translateY(-2px);
     box-shadow: 0 0 30px rgba(255, 70, 85, 0.55);
 }
@@ -52,20 +116,45 @@ a {
 .btn--outline {
     background: transparent;
     color: #ff9caa;
-    border-color: rgba(255, 255, 255, 0.25);
+    border-color: var(--color-border-light);
     box-shadow: none;
 }
 
-.btn--outline:hover {
+.btn--outline:hover,
+.btn--outline:focus-visible {
     background: rgba(255, 70, 85, 0.1);
-    box-shadow: 0 0 18px rgba(255, 70, 85, 0.35);
+    box-shadow: 0 0 18px var(--color-accent-glow);
+}
+
+/* ---------- THEME TOGGLE BUTTON ---------- */
+.theme-toggle {
+    background: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-primary);
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+    background: var(--color-bg-secondary);
+    border-color: var(--color-accent);
+    transform: scale(1.05);
 }
 
 /* ---------- LOADER (CSS-ONLY, NO JS NEEDED) ---------- */
 #loader {
     position: fixed;
     inset: 0;
-    background: #05060a;
+    background: var(--color-bg-primary);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -78,8 +167,8 @@ a {
     height: 64px;
     border-radius: 50%;
     border: 3px solid #15151c;
-    border-top-color: #ff4655;
-    border-right-color: #ff4655;
+    border-top-color: var(--color-accent);
+    border-right-color: var(--color-accent);
     box-shadow: 0 0 20px rgba(255, 70, 85, 0.8);
     animation: spin 0.9s linear infinite;
 }

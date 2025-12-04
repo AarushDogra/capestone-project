@@ -1,47 +1,135 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the arsenal of NovaRift. Each weapon offers unique tactical advantages on the battlefield.">
     <title>Weapons - NovaRift</title>
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/weapons.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
     <div id="loader">
-    <div class="spinner"></div>
-</div>
+        <div class="spinner"></div>
+    </div>
 
-    <nav>
-        <div class="logo">NovaRift</div>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="agents.html">Agents</a></li>
-            <li><a href="maps.html">Maps</a></li>
-            <li><a href="weapons.html" class="active">Weapons</a></li>
-            <li><a href="about.html">About</a></li>
-        </ul>
-    </nav>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">NovaRift</a>
+            <div class="nav-wrapper">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="agents.html">Agents</a></li>
+                    <li><a href="maps.html">Maps</a></li>
+                    <li><a href="weapons.html" class="active">Weapons</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+                <button class="theme-toggle" aria-label="Toggle theme">☀️</button>
+                <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
 
-    <section class="weapon-container">
-        <h1>Arm Yourself</h1>
-        <div class="weapon-grid">
-            <div class="weapon-card">
-                <img src="https://cdn.shopify.com/s/files/1/1134/1034/files/1_4c5be783-bf18-4c12-8eb5-a283f4566f53_480x480.jpg?v=1688495737" alt="Phantom-X Silent Rifle">
-                <h2>Phantom-X</h2>
-                <p>Silent Rifle</p>
+    <main>
+        <section class="weapon-container">
+            <h1>Arm Yourself</h1>
+            <div class="weapon-grid">
+                <article class="weapon-card">
+                    <figure>
+                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=600&fit=crop" 
+                             alt="Phantom-X - A silent precision rifle with advanced optics" 
+                             loading="lazy"
+                             srcset="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=300&fit=crop 400w,
+                                     https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=600&fit=crop 800w">
+                    </figure>
+                    <div class="weapon-info">
+                        <h2>Phantom-X</h2>
+                        <span class="weapon-type">Silent Rifle</span>
+                        <span class="weapon-tag">Rifle</span>
+                    </div>
+                </article>
+                
+                <article class="weapon-card">
+                    <figure>
+                        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&h=600&fit=crop" 
+                             alt="NovaBurst - A high-energy plasma submachine gun" 
+                             loading="lazy"
+                             srcset="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=400&h=300&fit=crop 400w,
+                                     https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&h=600&fit=crop 800w">
+                    </figure>
+                    <div class="weapon-info">
+                        <h2>NovaBurst</h2>
+                        <span class="weapon-type">Plasma SMG</span>
+                        <span class="weapon-tag">SMG</span>
+                    </div>
+                </article>
+                
+                <article class="weapon-card">
+                    <figure>
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&h=600&fit=crop" 
+                             alt="VoidSniper - A long-range precision sniper rifle" 
+                             loading="lazy"
+                             srcset="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400&h=300&fit=crop 400w,
+                                     https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&h=600&fit=crop 800w">
+                    </figure>
+                    <div class="weapon-info">
+                        <h2>VoidSniper</h2>
+                        <span class="weapon-type">Long-range Beast</span>
+                        <span class="weapon-tag">Sniper</span>
+                    </div>
+                </article>
             </div>
-            <div class="weapon-card">
-                <img src="https://www.callofduty.com/content/dam/atvi/callofduty/cod-touchui/store/battlepass/blackops6/season-6/COD-Store_S6_PDP-BP_Merrick-556.webp" alt="NovaBurst Plasma SMG">
-                <h2>NovaBurst</h2>
-                <p>Plasma SMG</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>NovaRift</h3>
+                <p>A tactical universe of heroes, tech, and chaos. Master your abilities and control the battlefield.</p>
             </div>
-            <div class="weapon-card">
-                <img src="https://static0.thegamerimages.com/wordpress/wp-content/uploads/2022/07/Destiny-2-Cloudstrike-Exotic-Sniper-Rifle.jpg?w=1600&h=900&fit=crop" alt="VoidSniper Long-range Beast">
-                <h2>VoidSniper</h2>
-                <p>Long-range Beast</p>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="agents.html">Agents</a></li>
+                    <li><a href="maps.html">Maps</a></li>
+                    <li><a href="weapons.html">Weapons</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>About</h3>
+                <ul class="footer-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="footer-social">
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="Discord">💬</a>
+                    <a href="#" aria-label="YouTube">📺</a>
+                    <a href="#" aria-label="Twitch">🎮</a>
+                </div>
             </div>
         </div>
-    </section>
+        <div class="footer-bottom">
+            <p>&copy; 2024 NovaRift. All rights reserved.</p>
+        </div>
+    </footer>
 
+    <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,44 +1,122 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <!-- comment added -->
-    <title>NovaRift</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NovaRift - A tactical universe of heroes, tech, and chaos. Assemble your squad and master the battlefield.">
+    <meta name="keywords" content="NovaRift, tactical game, agents, weapons, maps, gaming">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://novarift.com/">
+    <meta property="og:title" content="NovaRift - Enter The Rift">
+    <meta property="og:description" content="A tactical universe of heroes, tech, and chaos. Assemble your squad and master the battlefield.">
+    <meta property="og:image" content="https://novarift.com/assets/images/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://novarift.com/">
+    <meta property="twitter:title" content="NovaRift - Enter The Rift">
+    <meta property="twitter:description" content="A tactical universe of heroes, tech, and chaos. Assemble your squad and master the battlefield.">
+    <meta property="twitter:image" content="https://novarift.com/assets/images/og-image.jpg">
+    
+    <title>NovaRift - Enter The Rift</title>
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+    <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
     <div id="loader">
-    <div class="spinner"></div>
-</div>
+        <div class="spinner"></div>
+    </div>
 
-    <nav>
-        <div class="logo">NovaRift</div>
-        <ul>
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="agents.html">Agents</a></li>
-            <li><a href="maps.html">Maps</a></li>
-            <li><a href="weapons.html">Weapons</a></li>
-            <li><a href="about.html">About</a></li>
-        </ul>
-    </nav>
-
-   <section class="hero">
-        <div class="overlay"></div>
-        <div class="hero-content">
-            <h1 class="fade"><span class="hero-title-accent">Enter The Rift</span></h1>
-            <p class="fade2">Assemble your squad, master your abilities, and control the battlefield in a tactical arena built for clutch plays.</p>
-            <div class="hero-actions fade3">
-                <a href="agents.html" class="btn">Explore Agents</a>
-                <a href="weapons.html" class="btn btn--outline">View Arsenal</a>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">NovaRift</a>
+            <div class="nav-wrapper">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="agents.html">Agents</a></li>
+                    <li><a href="maps.html">Maps</a></li>
+                    <li><a href="weapons.html">Weapons</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+                <button class="theme-toggle" aria-label="Toggle theme">☀️</button>
+                <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
-            <div class="hero-stats fade3">
-                <span><strong>4</strong>Core Roles</span>
-                <span><strong>3</strong>Signature Maps</span>
-                <span><strong>3</strong>Prime Weapons</span>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1600&q=80">
+                <source src="https://videos.pexels.com/video-files/3045163/3045163-hd_1920_1080_30fps.mp4" type="video/mp4">
+            </video>
+            <div class="overlay"></div>
+            <div class="hero-content">
+                <h1 class="fade"><span class="hero-title-accent">Enter The Rift</span></h1>
+                <p class="fade2">Assemble your squad, master your abilities, and control the battlefield in a tactical arena built for clutch plays.</p>
+                <div class="hero-actions fade3">
+                    <a href="agents.html" class="btn" data-prefetch>Explore Agents</a>
+                    <a href="weapons.html" class="btn btn--outline">View Arsenal</a>
+                </div>
+                <div class="hero-stats fade3">
+                    <span><strong>4</strong>Core Roles</span>
+                    <span><strong>3</strong>Signature Maps</span>
+                    <span><strong>3</strong>Prime Weapons</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>NovaRift</h3>
+                <p>A tactical universe of heroes, tech, and chaos. Master your abilities and control the battlefield.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="agents.html">Agents</a></li>
+                    <li><a href="maps.html">Maps</a></li>
+                    <li><a href="weapons.html">Weapons</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>About</h3>
+                <ul class="footer-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="footer-social">
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="Discord">💬</a>
+                    <a href="#" aria-label="YouTube">📺</a>
+                    <a href="#" aria-label="Twitch">🎮</a>
+                </div>
             </div>
         </div>
-    </section>
+        <div class="footer-bottom">
+            <p>&copy; 2024 NovaRift. All rights reserved.</p>
+        </div>
+    </footer>
 
+    <script src="js/main.js"></script>
 </body>
 </html>

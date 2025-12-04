@@ -1,52 +1,150 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meet the agents of NovaRift. Each agent brings unique abilities and playstyles to the battlefield.">
     <title>Agents - NovaRift</title>
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/agents.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
     <div id="loader">
-    <div class="spinner"></div>
-</div>
+        <div class="spinner"></div>
+    </div>
 
-    <nav>
-        <div class="logo">NovaRift</div>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="agents.html" class="active">Agents</a></li>
-            <li><a href="maps.html">Maps</a></li>
-            <li><a href="weapons.html">Weapons</a></li>
-            <li><a href="about.html">About</a></li>
-        </ul>
-    </nav>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">NovaRift</a>
+            <div class="nav-wrapper">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="agents.html" class="active">Agents</a></li>
+                    <li><a href="maps.html">Maps</a></li>
+                    <li><a href="weapons.html">Weapons</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+                <button class="theme-toggle" aria-label="Toggle theme">☀️</button>
+                <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
 
-    <section class="agents-container">
-        <h1>Meet the Agents</h1>
-        <div class="agent-grid">
-            <div class="agent-card">
-                <img src="https://img.redbull.com/images/c_crop,x_398,y_0,h_1557,w_1246/c_fill,w_450,h_600/q_auto,f_auto/redbullcom/2018/02/26/f4fb5c1a-8b67-4f48-a975-6e9076d8ab2b/darksouls-screenshot" alt="Vexa - Shadow Manipulator">
-                <h2>Vexa</h2>
-                <p>Shadow Manipulator</p>
+    <main>
+        <section class="agents-container">
+            <h1>Meet the Agents</h1>
+            <div class="agent-grid">
+                <article class="agent-card">
+                    <figure>
+                        <img src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=400&h=600&fit=crop" 
+                             alt="Vexa - Shadow Manipulator" 
+                             loading="lazy"
+                             srcset="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=400&h=600&fit=crop 400w,
+                                     https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=800&h=1200&fit=crop 800w">
+                    </figure>
+                    <div class="agent-info">
+                        <h2>Vexa</h2>
+                        <span class="agent-role">Shadow Manipulator</span>
+                        <span class="agent-tag">Duelist</span>
+                    </div>
+                </article>
+                
+                <article class="agent-card">
+                    <figure>
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400&h=600&fit=crop" 
+                             alt="Rift - Dimensional Fighter" 
+                             loading="lazy"
+                             srcset="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400&h=600&fit=crop 400w,
+                                     https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&h=1200&fit=crop 800w">
+                    </figure>
+                    <div class="agent-info">
+                        <h2>Rift</h2>
+                        <span class="agent-role">Dimensional Fighter</span>
+                        <span class="agent-tag">Controller</span>
+                    </div>
+                </article>
+                
+                <article class="agent-card">
+                    <figure>
+                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=600&fit=crop" 
+                             alt="Ion - Energy Specialist" 
+                             loading="lazy"
+                             srcset="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=600&fit=crop 400w,
+                                     https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=1200&fit=crop 800w">
+                    </figure>
+                    <div class="agent-info">
+                        <h2>Ion</h2>
+                        <span class="agent-role">Energy Specialist</span>
+                        <span class="agent-tag">Initiator</span>
+                    </div>
+                </article>
+                
+                <article class="agent-card">
+                    <figure>
+                        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=400&h=600&fit=crop" 
+                             alt="Pulse - Tech Support" 
+                             loading="lazy"
+                             srcset="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=400&h=600&fit=crop 400w,
+                                     https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&h=1200&fit=crop 800w">
+                    </figure>
+                    <div class="agent-info">
+                        <h2>Pulse</h2>
+                        <span class="agent-role">Tech Support</span>
+                        <span class="agent-tag">Sentinel</span>
+                    </div>
+                </article>
             </div>
-            <div class="agent-card">
-                <img src="https://randompowergenerator.com/_astro/dimensional-rift.CzkprmZt_Z2rCtPs.webp" alt="Rift - Dimensional Fighter">
-                <h2>Rift</h2>
-                <p>Dimensional Fighter</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>NovaRift</h3>
+                <p>A tactical universe of heroes, tech, and chaos. Master your abilities and control the battlefield.</p>
             </div>
-            <div class="agent-card">
-                <img src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2021/02/metal-gear-rising-revengeance.jpg?q=50&fit=crop&w=825&dpr=1.5" alt="Ion - Energy Specialist">
-                <h2>Ion</h2>
-                <p>Energy Specialist</p>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="agents.html">Agents</a></li>
+                    <li><a href="maps.html">Maps</a></li>
+                    <li><a href="weapons.html">Weapons</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
             </div>
-            <div class="agent-card">
-                <img src="https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/1368e917e5026c3a13b235a41686a90f10a9b21f-2500x2611.jpg" alt="Pulse - Tech Support">
-                <h2>Pulse</h2>
-                <p>Tech Support</p>
+            <div class="footer-section">
+                <h3>About</h3>
+                <ul class="footer-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="footer-social">
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="Discord">💬</a>
+                    <a href="#" aria-label="YouTube">📺</a>
+                    <a href="#" aria-label="Twitch">🎮</a>
+                </div>
             </div>
         </div>
-    </section>
+        <div class="footer-bottom">
+            <p>&copy; 2024 NovaRift. All rights reserved.</p>
+        </div>
+    </footer>
 
+    <script src="js/main.js"></script>
 </body>
 </html>

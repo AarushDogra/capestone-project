@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore the battlefields of NovaRift. Each map offers unique tactical opportunities and challenges.">
-    <title>Maps - NovaRift</title>
+    <meta name="description" content="Get in touch with the NovaRift team. We'd love to hear from you!">
+    <title>Contact - NovaRift</title>
     <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/maps.css">
+    <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
@@ -23,11 +23,11 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="agents.html">Agents</a></li>
-                    <li><a href="maps.html" class="active">Maps</a></li>
+                    <li><a href="maps.html">Maps</a></li>
                     <li><a href="weapons.html">Weapons</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
                     <li><a href="faq.html">FAQ</a></li>
                 </ul>
                 <button class="theme-toggle" aria-label="Toggle theme">☀️</button>
@@ -41,51 +41,37 @@
     </header>
 
     <main>
-        <section class="maps-container">
-            <h1>Explore the Battlefield</h1>
-            <div class="map-grid">
-                <article class="map-card">
-                    <figure>
-                        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&h=600&fit=crop" 
-                             alt="Nebula Point - A futuristic cityscape map with neon-lit streets" 
-                             loading="lazy"
-                             srcset="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=400&h=300&fit=crop 400w,
-                                     https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&h=600&fit=crop 800w">
-                    </figure>
-                    <div class="map-info">
-                        <h2>Nebula Point</h2>
-                        <span class="map-type">Urban</span>
-                    </div>
-                </article>
+        <section class="contact-container">
+            <h1>Contact Us</h1>
+            <p class="contact-intro">Have a question, suggestion, or just want to say hello? We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible.</p>
+            
+            <form id="contact-form" class="contact-form" novalidate>
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required aria-required="true" aria-describedby="name-error">
+                    <span id="name-error" class="error-message" role="alert"></span>
+                </div>
                 
-                <article class="map-card">
-                    <figure>
-                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&h=600&fit=crop" 
-                             alt="Frost Valley - A snow-covered tactical arena" 
-                             loading="lazy"
-                             srcset="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400&h=300&fit=crop 400w,
-                                     https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&h=600&fit=crop 800w">
-                    </figure>
-                    <div class="map-info">
-                        <h2>Frost Valley</h2>
-                        <span class="map-type">Arctic</span>
-                    </div>
-                </article>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required aria-required="true" aria-describedby="email-error">
+                    <span id="email-error" class="error-message" role="alert"></span>
+                </div>
                 
-                <article class="map-card">
-                    <figure>
-                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=600&fit=crop" 
-                             alt="Solar Basin - A desert wasteland with strategic high ground" 
-                             loading="lazy"
-                             srcset="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=300&fit=crop 400w,
-                                     https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=600&fit=crop 800w">
-                    </figure>
-                    <div class="map-info">
-                        <h2>Solar Basin</h2>
-                        <span class="map-type">Desert</span>
-                    </div>
-                </article>
-            </div>
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" required aria-required="true" aria-describedby="message-error" rows="6"></textarea>
+                    <span id="message-error" class="error-message" role="alert"></span>
+                </div>
+                
+                <!-- Honeypot field (hidden from users) -->
+                <div class="form-group honeypot">
+                    <label for="website">Website (leave blank)</label>
+                    <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                </div>
+                
+                <button type="submit" class="btn form-submit">Send Message</button>
+            </form>
         </section>
     </main>
 
@@ -128,5 +114,7 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/form-validation.js"></script>
 </body>
 </html>
+
