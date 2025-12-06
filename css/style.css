@@ -94,11 +94,14 @@ body {
     transition: background 0.3s ease, color 0.3s ease;  /* Smooth theme transitions */
 }
 
+/* Light Theme Body Background: Different gradient for light mode */
 [data-theme="light"] body {
     background:
         radial-gradient(circle at top left, #e8eaf0 0, transparent 50%),
         radial-gradient(circle at bottom right, #f0e8ea 0, transparent 55%),
         var(--color-bg-primary);
+    /* Smooth transition when switching themes */
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 h1, h2 {
@@ -222,7 +225,7 @@ a {
     width: 64px;                         /* Size of spinner */
     height: 64px;                        /* Square (becomes circle) */
     border-radius: 50%;                 /* Makes it circular */
-    border: 3px solid #15151c;            /* Base border color */
+    border: 3px solid var(--color-bg-card);  /* Base border color - adapts to theme */
     border-top-color: var(--color-accent);     /* Top border is accent color */
     border-right-color: var(--color-accent);   /* Right border is accent color */
     box-shadow: 0 0 20px rgba(255, 70, 85, 0.8);  /* Glow effect */

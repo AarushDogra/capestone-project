@@ -52,6 +52,13 @@
     background:
         linear-gradient(120deg, rgba(5, 6, 10, 0.9) 0%, rgba(5, 6, 10, 0.4) 55%, rgba(255, 70, 85, 0.08) 100%);
     pointer-events: none;                 /* Allows clicks to pass through */
+    transition: background 0.3s ease;     /* Smooth transition when theme changes */
+}
+
+/* Light theme overlay: Lighter gradient for light mode */
+[data-theme="light"] .overlay {
+    background:
+        linear-gradient(120deg, rgba(245, 245, 247, 0.7) 0%, rgba(245, 245, 247, 0.3) 55%, rgba(255, 70, 85, 0.1) 100%);
 }
 
 .hero-content {
@@ -79,7 +86,8 @@
     transform: translateY(-50%) skewX(-16deg);
     width: 10px;
     height: 80%;
-    background: linear-gradient(180deg, #ff4655, #ff9c5a);
+    /* Uses CSS variables for theme support */
+    background: linear-gradient(180deg, var(--color-accent), var(--color-accent-light));
     box-shadow: 0 0 18px rgba(255, 70, 85, 0.8);
 }
 

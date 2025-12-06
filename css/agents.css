@@ -8,20 +8,21 @@
     gap: 25px;
     margin-top: 30px;
 }
+/* Agent Card: Uses CSS variables so it adapts to theme */
 .agent-card {
-    background: radial-gradient(circle at top, rgba(255, 70, 85, 0.14), transparent 55%), #101019;
+    background: radial-gradient(circle at top, rgba(255, 70, 85, 0.14), transparent 55%), var(--color-bg-card);
     padding: 22px 18px 20px;
     border-radius: 14px;
     text-align: center;
     transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease, background 0.22s ease;
-    border: 1px solid rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--color-border);
     box-shadow:
         0 14px 38px rgba(0, 0, 0, 0.65),
-        0 0 0 1px rgba(255, 255, 255, 0.02);
+        0 0 0 1px var(--color-border);
 }
 .agent-card:hover {
     transform: translateY(-6px);
-    background: radial-gradient(circle at top, rgba(255, 70, 85, 0.25), transparent 60%), #151520;
+    background: radial-gradient(circle at top, rgba(255, 70, 85, 0.25), transparent 60%), var(--color-bg-secondary);
     border-color: rgba(255, 70, 85, 0.6);
     box-shadow:
         0 20px 45px rgba(0, 0, 0, 0.9),
