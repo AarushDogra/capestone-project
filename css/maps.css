@@ -1,12 +1,29 @@
+/* ============================================
+   MAPS PAGE STYLES (maps.css)
+   ============================================
+   
+   This file styles the Maps page which displays
+   map cards in a grid layout.
+   
+   KEY FEATURES:
+   - Responsive grid layout (3 columns on desktop)
+   - Map cards with hover effects
+   - Map type tags
+   - Theme-aware colors
+   ============================================ */
+
+/* Container: Wraps all map content */
 .maps-container {
-    padding: 40px 8vw;
-    text-align: center;
+    padding: 40px 8vw;        /* Vertical padding 40px, horizontal 8% of viewport */
+    text-align: center;       /* Center-aligns content */
 }
+
+/* Grid: Displays map cards in a responsive grid */
 .map-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 25px;
-    margin-top: 30px;
+    display: grid;                                    /* CSS Grid layout */
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 equal columns on desktop */
+    gap: 25px;                                        /* Space between cards */
+    margin-top: 30px;                                 /* Space above grid */
 }
 /* Map Card: Uses CSS variables for theme support */
 .map-card {
@@ -28,31 +45,35 @@
         0 20px 45px rgba(0, 0, 0, 0.9),
         0 0 32px rgba(132, 219, 255, 0.55);
 }
+/* Figure: Container for map image */
 .map-card figure {
-    margin: 0;
-    padding: 0;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-    border-radius: 8px;
-    margin-bottom: 12px;
+    margin: 0;                 /* Remove default margin */
+    padding: 0;                /* Remove default padding */
+    aspect-ratio: 16 / 9;     /* Maintains widescreen ratio (16:9) */
+    overflow: hidden;          /* Hides image overflow */
+    border-radius: 8px;        /* Rounded corners */
+    margin-bottom: 12px;       /* Space below image */
 }
 
+/* Image: Map screenshot */
 .map-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform var(--transition-slow);
-    display: block;
+    width: 100%;               /* Full width */
+    height: 100%;             /* Full height */
+    object-fit: cover;         /* Covers area, maintains aspect ratio */
+    transition: transform var(--transition-slow);  /* Smooth zoom animation */
+    display: block;            /* Block element (removes inline spacing) */
 }
 
+/* Hover Effect: Image zooms on hover */
 .map-card:hover img {
-    transform: scale(1.05);
+    transform: scale(1.05);    /* Zoom in 5% on hover */
 }
 
+/* Map Info: Container for name and type */
 .map-info {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+    display: flex;             /* Flexbox layout */
+    flex-direction: column;    /* Stack vertically */
+    gap: 6px;                  /* Space between items */
 }
 
 .map-card h2 {

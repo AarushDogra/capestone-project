@@ -1,12 +1,29 @@
+/* ============================================
+   AGENTS PAGE STYLES (agents.css)
+   ============================================
+   
+   This file styles the Agents page which displays
+   agent cards in a grid layout.
+   
+   KEY FEATURES:
+   - Responsive grid layout (4 columns on desktop, fewer on mobile)
+   - Agent cards with hover effects
+   - Role tags for each agent
+   - Theme-aware colors (uses CSS variables)
+   ============================================ */
+
+/* Container: Wraps all agent content */
 .agents-container {
-    padding: 40px 8vw;
-    text-align: center;
+    padding: 40px 8vw;        /* Vertical padding 40px, horizontal 8% of viewport width */
+    text-align: center;        /* Center-aligns all content */
 }
+
+/* Grid: Displays agent cards in a responsive grid */
 .agent-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 25px;
-    margin-top: 30px;
+    display: grid;                                    /* CSS Grid layout */
+    grid-template-columns: repeat(4, minmax(0, 1fr)); /* 4 equal columns on desktop */
+    gap: 25px;                                        /* Space between cards */
+    margin-top: 30px;                                 /* Space above grid */
 }
 /* Agent Card: Uses CSS variables so it adapts to theme */
 .agent-card {
@@ -28,30 +45,34 @@
         0 20px 45px rgba(0, 0, 0, 0.9),
         0 0 32px rgba(255, 70, 85, 0.55);
 }
+/* Figure: Container for agent image */
 .agent-card figure {
-    margin: 0;
-    padding: 0;
-    aspect-ratio: 3 / 4;
-    overflow: hidden;
-    border-radius: 10px;
-    margin-bottom: 12px;
+    margin: 0;                 /* Remove default margin */
+    padding: 0;                /* Remove default padding */
+    aspect-ratio: 3 / 4;      /* Maintains portrait ratio (3:4) */
+    overflow: hidden;          /* Hides image overflow */
+    border-radius: 10px;       /* Rounded corners */
+    margin-bottom: 12px;       /* Space below image */
 }
 
+/* Image: Agent portrait image */
 .agent-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform var(--transition-slow);
+    width: 100%;               /* Full width of container */
+    height: 100%;              /* Full height of container */
+    object-fit: cover;         /* Covers area, maintains aspect ratio */
+    transition: transform var(--transition-slow);  /* Smooth zoom animation */
 }
 
+/* Hover Effect: Image zooms slightly on hover */
 .agent-card:hover img {
-    transform: scale(1.05);
+    transform: scale(1.05);    /* Zoom in 5% on hover */
 }
 
+/* Agent Info: Container for name, role, and tag */
 .agent-info {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+    display: flex;             /* Flexbox layout */
+    flex-direction: column;    /* Stack items vertically */
+    gap: 6px;                  /* Space between items */
 }
 
 .agent-card h2 {
@@ -60,29 +81,33 @@
     color: var(--color-text-primary);
 }
 
+/* Agent Role: Description text (e.g., "Shadow Manipulator") */
 .agent-role {
-    font-size: 13px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--color-text-muted);
+    font-size: 13px;                    /* Small text size */
+    letter-spacing: 0.14em;              /* Spaced out letters */
+    text-transform: uppercase;          /* All caps */
+    color: var(--color-text-muted);     /* Muted color (adapts to theme) */
 }
 
+/* Agent Tag: Role badge (e.g., "Duelist", "Controller") */
 .agent-tag {
-    display: inline-block;
-    padding: 4px 10px;
-    background: var(--color-accent-glow);
-    border: 1px solid var(--color-accent);
-    border-radius: 12px;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--color-accent);
-    width: fit-content;
-    margin-top: 4px;
+    display: inline-block;               /* Inline but can have width/height */
+    padding: 4px 10px;                   /* Internal spacing */
+    background: var(--color-accent-glow); /* Subtle accent background */
+    border: 1px solid var(--color-accent); /* Accent color border */
+    border-radius: 12px;                 /* Rounded pill shape */
+    font-size: 11px;                     /* Small text */
+    font-weight: 600;                    /* Bold text */
+    letter-spacing: 0.1em;               /* Spaced letters */
+    text-transform: uppercase;          /* All caps */
+    color: var(--color-accent);          /* Accent color text */
+    width: fit-content;                 /* Only as wide as content */
+    margin-top: 4px;                     /* Space above tag */
 }
+
+/* Responsive: On smaller screens, use auto-fit grid */
 .agent-grid {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));  /* Auto-adjust columns */
 }
 
 @media (max-width: 768px) {

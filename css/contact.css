@@ -1,8 +1,23 @@
-/* ---------- CONTACT FORM ---------- */
+/* ============================================
+   CONTACT FORM STYLES (contact.css)
+   ============================================
+   
+   This file styles the Contact page with a form
+   for users to send messages.
+   
+   KEY FEATURES:
+   - Centered form layout
+   - Input field styling with focus states
+   - Error message display
+   - Success message display
+   - Honeypot field (hidden spam trap)
+   ============================================ */
+
+/* Container: Wraps all contact page content */
 .contact-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: var(--spacing-xl) var(--spacing-lg);
+    max-width: 800px;          /* Maximum width for readability */
+    margin: 0 auto;             /* Centers container horizontally */
+    padding: var(--spacing-xl) var(--spacing-lg);  /* Uses CSS variables for spacing */
 }
 
 .contact-container h1 {
@@ -38,25 +53,27 @@
     font-size: 14px;
 }
 
+/* Input Fields: Text inputs and textarea styling */
 .form-group input,
 .form-group textarea {
-    width: 100%;
-    padding: 12px 16px;
-    background: var(--color-bg-secondary);
-    border: 1px solid var(--color-border);
-    border-radius: 6px;
-    color: var(--color-text-primary);
-    font-family: inherit;
-    font-size: 15px;
-    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
-    box-sizing: border-box;
+    width: 100%;                           /* Full width of container */
+    padding: 12px 16px;                    /* Internal spacing */
+    background: var(--color-bg-secondary);  /* Background color (adapts to theme) */
+    border: 1px solid var(--color-border);  /* Border color (adapts to theme) */
+    border-radius: 6px;                    /* Rounded corners */
+    color: var(--color-text-primary);       /* Text color (adapts to theme) */
+    font-family: inherit;                  /* Uses page font */
+    font-size: 15px;                       /* Readable text size */
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);  /* Smooth transitions */
+    box-sizing: border-box;                /* Includes padding in width calculation */
 }
 
+/* Focus State: When user clicks into field */
 .form-group input:focus,
 .form-group textarea:focus {
-    outline: none;
-    border-color: var(--color-accent);
-    box-shadow: 0 0 0 3px var(--color-accent-glow);
+    outline: none;                         /* Remove default browser outline */
+    border-color: var(--color-accent);     /* Change border to accent color */
+    box-shadow: 0 0 0 3px var(--color-accent-glow);  /* Glow effect around field */
 }
 
 .form-group textarea {
@@ -86,11 +103,13 @@
     text-align: center;
 }
 
+/* Honeypot Field: Hidden spam trap field */
+/* Bots often fill hidden fields, humans won't see it */
 .honeypot {
-    position: absolute;
-    left: -9999px;
-    opacity: 0;
-    pointer-events: none;
+    position: absolute;        /* Positioned absolutely */
+    left: -9999px;            /* Moved far off-screen */
+    opacity: 0;               /* Invisible */
+    pointer-events: none;      /* Can't be clicked */
 }
 
 .form-submit {

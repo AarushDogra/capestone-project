@@ -1,18 +1,31 @@
-/* ---------- LIGHTBOX MODAL ---------- */
-/* Lightbox: Full-screen modal for gallery images */
+/* ============================================
+   LIGHTBOX MODAL STYLES (lightbox.css)
+   ============================================
+   
+   This file styles the lightbox modal that opens
+   when users click gallery images.
+   
+   KEY FEATURES:
+   - Full-screen overlay
+   - Centered image display
+   - Close button
+   - Theme-aware background
+   - Smooth fade in/out animations
+   ============================================ */
+
+/* Lightbox: Full-screen modal overlay */
 .lightbox {
-    position: fixed;
-    inset: 0;
-    /* Background adapts to theme using CSS variable */
-    background: rgba(5, 6, 10, 0.95);
-    backdrop-filter: blur(10px);
-    z-index: 10000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity var(--transition-normal), visibility var(--transition-normal), background 0.3s ease;
+    position: fixed;           /* Fixed to viewport */
+    inset: 0;                  /* Covers entire screen (top:0, right:0, bottom:0, left:0) */
+    background: rgba(5, 6, 10, 0.95);  /* Dark semi-transparent background */
+    backdrop-filter: blur(10px);  /* Blurs content behind modal */
+    z-index: 10000;            /* Above all other content */
+    display: flex;              /* Flexbox for centering */
+    align-items: center;        /* Vertical centering */
+    justify-content: center;    /* Horizontal centering */
+    opacity: 0;                 /* Hidden by default */
+    visibility: hidden;         /* Also hidden (for accessibility) */
+    transition: opacity var(--transition-normal), visibility var(--transition-normal), background 0.3s ease;  /* Smooth fade */
 }
 
 /* Light theme lightbox background */
@@ -49,23 +62,24 @@
     font-size: 14px;
 }
 
+/* Buttons: Close, Previous, Next buttons */
 .lightbox-close,
 .lightbox-prev,
 .lightbox-next {
-    position: absolute;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid var(--color-border);
-    color: var(--color-text-primary);
-    width: 50px;
+    position: absolute;         /* Positioned absolutely within lightbox */
+    background: rgba(255, 255, 255, 0.1);  /* Semi-transparent white */
+    border: 1px solid var(--color-border);  /* Border (adapts to theme) */
+    color: var(--color-text-primary);  /* Text color (adapts to theme) */
+    width: 50px;               /* Square button */
     height: 50px;
-    border-radius: 50%;
-    font-size: 24px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all var(--transition-fast);
-    z-index: 10001;
+    border-radius: 50%;        /* Circular button */
+    font-size: 24px;           /* Icon size */
+    cursor: pointer;            /* Pointer cursor on hover */
+    display: flex;              /* Flexbox for centering icon */
+    align-items: center;        /* Vertical center */
+    justify-content: center;    /* Horizontal center */
+    transition: all var(--transition-fast);  /* Smooth hover effects */
+    z-index: 10001;            /* Above lightbox content */
 }
 
 .lightbox-close:hover,

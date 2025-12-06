@@ -1,6 +1,20 @@
-/* ---------- GALLERY ---------- */
+/* ============================================
+   GALLERY PAGE STYLES (gallery.css)
+   ============================================
+   
+   This file styles the Gallery page which displays
+   images in a responsive grid with lightbox functionality.
+   
+   KEY FEATURES:
+   - Responsive grid layout
+   - Hover effects on images
+   - Caption overlay on hover
+   - Click to open in lightbox (handled by lightbox.js)
+   ============================================ */
+
+/* Container: Wraps all gallery content */
 .gallery-container {
-    padding: var(--spacing-xl) var(--spacing-lg);
+    padding: var(--spacing-xl) var(--spacing-lg);  /* Uses CSS variables for spacing */
 }
 
 .gallery-container h1 {
@@ -54,21 +68,23 @@
     transform: scale(1.05);
 }
 
+/* Caption: Image description that appears on hover */
 .gallery-item-caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    position: absolute;        /* Positioned over image */
+    bottom: 0;                 /* At bottom of image */
+    left: 0;                   /* Full width */
     right: 0;
-    background: linear-gradient(to top, rgba(5, 6, 10, 0.9), transparent);
-    color: var(--color-text-primary);
-    padding: var(--spacing-sm);
-    font-size: 13px;
-    opacity: 0;
-    transition: opacity var(--transition-fast);
+    background: linear-gradient(to top, rgba(5, 6, 10, 0.9), transparent);  /* Dark gradient for readability */
+    color: var(--color-text-primary);  /* Text color (adapts to theme) */
+    padding: var(--spacing-sm);  /* Internal spacing */
+    font-size: 13px;          /* Small text */
+    opacity: 0;               /* Hidden by default */
+    transition: opacity var(--transition-fast);  /* Smooth fade in */
 }
 
+/* Show caption on hover */
 .gallery-item:hover .gallery-item-caption {
-    opacity: 1;
+    opacity: 1;               /* Fully visible */
 }
 
 @media (max-width: 768px) {
